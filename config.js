@@ -6,7 +6,7 @@ const MAX_VEHICLES = 200;
 const MAX_REQUEST_SIZE = '1mb';
 const PORT = 3000;
 const LOG_DIR = __dirname + '/..';
-const ROUTER = 'osrm';
+const ROUTER = 'ors';
 
 // Config variables.
 const cliArgs = minimist(process.argv.slice(2), {
@@ -33,8 +33,8 @@ const cliArgs = minimist(process.argv.slice(2), {
 // and ors.
 const routingServers = {
   car: {
-    host: 'osrm',
-    port: '5000'
+    host: '0.0.0.0',
+    port: '8080'
   }
 };
 
@@ -59,4 +59,3 @@ module.exports = {
   routingServers: routingServers,
   vroomErrorCodes: vroomErrorCodes
 };
-
